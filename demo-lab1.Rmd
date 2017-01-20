@@ -13,6 +13,8 @@ When you save the notebook, an HTML file containing the code and output will be 
 
 ##  Exercise 8 from ISLR Chapter 2
 
+The following illustrate commands for exploring this exercise using R and various packages for the `Collage` data.
+
 ### Libraries
 
 Try to load the `ISLR` library
@@ -154,9 +156,14 @@ my.bp # displays the boxplots
 
 ### Conditional Plots
 
-Let's look at the distributio
+Let's look at the distribution of Out of state tuition versus Elite status for Private versun Public universities using _conditional plots_
 
 ```{r, fig.width=8}
 coplot(Outstate ~ Elite | Private, data=College)
 ```
 
+_Energetic Student:  Please improve upone the above plot using ggplot and post to Piazza or issue a pull request_
+
+## Next Steps
+
+Update this document and explore the other variables thinking about the objective of predicting `Apps`.  Provide a brief summary of what you discover thinking about models to predict `Apps`.
