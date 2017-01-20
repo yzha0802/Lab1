@@ -3,10 +3,6 @@ box: rocker/hadleyverse
 build:
   steps:
     - script:
-        name: Check for allowed files
-        code: |
-          Rscript -e "source('https://github.com/STA521-S17/Demo/blob/master/demo_whitelist.R')"
-    - script:
         name: Render R markdown
         code: |
           Rscript -e "library(rmarkdown);render('lab1-demo.Rmd')"
