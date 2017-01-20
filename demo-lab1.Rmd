@@ -13,3 +13,4 @@ When you save the notebook, an HTML file containing the code and output will be 
 
 ##  Exercise 8 from ISLR Chapter 2
 
+First install the `ISLR` library from CRAN. Click on  *Packages*  then *Install*.  Enter the package name
