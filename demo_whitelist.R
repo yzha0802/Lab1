@@ -1,6 +1,9 @@
 allowed_files = c("demo-lab1.Rmd",
                   "README.md",
-                  "wercker.yml")
+                  "wercker.yml",
+                  .gitignore,
+                  demo-whitelist.R
+                  )
 
 files = dir()
 disallowed_files = files[!(files %in% allowed_files)]
