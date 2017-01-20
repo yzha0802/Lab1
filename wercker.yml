@@ -5,4 +5,4 @@ build:
     - script:
         name: Render R markdown
         code: |
-          Rscript -e "library(rmarkdown);render('lab1-demo.Rmd')"
+          Rscript -e "library(rmarkdown);render('demo-lab1.Rmd')"
