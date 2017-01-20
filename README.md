@@ -1,3 +1,5 @@
+[![wercker status](https://app.wercker.com/status/a4007451f0c499b3396ab22829d4e0dc/s/master "wercker status")](https://app.wercker.com/project/byKey/a4007451f0c499b3396ab22829d4e0dc)
+
 # Demo
 Demo for lab 1/20/2017
 
