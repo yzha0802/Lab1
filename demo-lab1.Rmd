@@ -13,4 +13,150 @@ When you save the notebook, an HTML file containing the code and output will be 
 
 ##  Exercise 8 from ISLR Chapter 2
 
-First install the `ISLR` library from CRAN. Click on  *Packages*  then *Install*.  Enter the package name
+### Libraries
+
+Try to load the `ISLR` library
+```{r}
+library(ISLR)
+```
+
+If it is not available you will need to install the  library from CRAN. Click on  *Packages*  then *Install*.  Enter the package name then click on the Install button.
+
+You can also install from the console/command line using
+`install.packages("ISLR")`.
+
+Ready?
+
+###  Getting the College data
+
+Next we will need to load the dataset.  This is part of the library so we will not need to read it in using `read.csv` but rather we will use the `data` function to load it from the library.
+
+```{r data}
+data(College)
+```
+
+This loads the dataframe `College`.  Note you can always see the content of any `R` object by simply typing its name.
+
+For information about the variables, read the text or enter
+```{r}
+help(College)
+```
+
+The info will appear in the `help` tab.
+
+To see explore the data, you can use the command `View(College)`.
+
+This will open a new tab, where you may scroll left and right to look at the rows and columns.
+In the `View` you should see that the first column is the College/University name.  These can be extracted using `rownames(College)`.  Let's print out the first 5
+
+```{r}
+rownames(College)[1:5]
+```
+
+
+
+### Summary
+
+```{r}
+summary(College)
+```
+### Dimensions of Data
+
+How many observations and variables are in the dataframe?
+
+
+```{r dim, echo=FALSE}
+d = dim(College)
+```
+
+Suppose we want to refer to those numbers in the text.  We can extract them using n = `r d[1]` and d = `r d[2]`.
+Look at the code to see how we extracted them
+
+### Scatter plot matrices
+
+There `base` `R` version of scatter plot matrices is obtained using the `pairs` function to plot all variables versus each other.  We can use subsetting of columns of the dataframe to
+look at the first 5 columns.  
+
+```{r, fig.width=8}
+pairs(College[, 1:5])
+```
+
+We can also look at this using the `ggpairs` function.
+Install the library `GGally` if it is not available (and any dependent libraries) and load it.
+
+```{r ggpairs, message=FALSE,warning=FALSE, fig.width=8}
+library(GGally)
+ggpairs(College, columns= c(1,3:5, 2))
+```
+
+
+_Energetic Students:  how do I suppress the message output so that it does not appear in my document ?  Post on Piazza if you know or make a pull request!_
+
+The `ggpairs` function realizes that the variable `Private` is categorial and plots side by side histograms.  The density plots are also useful for seeing the skewness in the marginal distributions.
+
+What other features do these plots indicate?  _(Think about assumptions for linear regression)_
+
+
+### New variables
+
+Let's create a new variable `Elite` by binning the `Top10perc` variable. We are going to divide universities into two groups based on whether or not the proportion of students coming from the top 10% of their high school classes exceeds 50 %.  We will use the library `dplyr` to illustrate some of the possible transformations and the idea of pipes, which are quite powerful once you get the hang of them!
+
+```{r}
+library(dplyr)
+College = College %>% 
+  mutate(Elite = factor(Top10perc > 50)) %>%
+  mutate(Elite = 
+           recode(Elite, 'TRUE' = "Yes", 'FALSE'="No"))
+  
+```
+
+
+_What is the above doing?_    Document the code here.
+
+Compare to the base `R` code:
+
+```{r, evaluate=FALSE}
+Elite=rep("No",nrow(College))
+Elite[College$Top10perc >50]="Yes"
+Elite=as.factor(Elite)
+college=data.frame(College ,Elite)
+```
+
+_How many Elite universities are there?_
+
+```{r}
+summary(College$Elite)
+```
+
+### Side by Side Boxplots
+
+Let's plot the variable `Outstate` versus `Elite` using side-by-side boxplots.  Using `base R` we would enter
+
+```{r, fig.width=6}
+boxplot(Outstate ~ Elite, data=College, 
+        ylab="Outstate", xlab="Elite")
+title("Distribution of Out of State Tuition")
+```
+
+
+Now for the `ggplot` version:
+
+
+```{r, fig.width=6}
+library(ggplot2)
+my.bp <<-ggplot(data=College, aes(y= Outstate, x=Elite)) # Creates boxplots
+my.bp <- my.bp + geom_boxplot() # Adds color
+my.bp <- my.bp + ggtitle("Distribution of Out of State Tuition") # Adds a title
+my.bp <- my.bp +  ylab("Outstate") + xlab("Elite") # Adds lables for axes
+my.bp # displays the boxplots
+```
+
+
+### Conditional Plots
+
+Let's look at the distributio
+
+```{r, fig.width=8}
+coplot(Outstate ~ Elite | Private, data=College)
+```
+
