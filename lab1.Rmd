@@ -86,7 +86,7 @@ pairs(College[, 1:5])
 We can also look at this using the `ggpairs` function.
 Install the library `GGally` if it is not available (and any dependent libraries) and load it.
 
-```{r ggpairs, warning=FALSE, message=FALSE, result='hide', fig.width=8}
+```{r ggpairs, warning=FALSE, message=FALSE, fig.width=8}
 library(GGally)
 ggpairs(College, columns= c(1,3:5, 2))
 ```
@@ -97,7 +97,7 @@ _Energetic Students:  how do I suppress the message output so that it does not a
 
 I found the answer on [this Stackexchange post:](http://stackoverflow.com/questions/41577362/suppress-ggpairs-messages-when-generating-plot) 
 
-```{r ggpairs-good, warning=FALSE, message=FALSE, result='hide', fig.width=8}
+```{r ggpairs-good, warning=FALSE, message=FALSE, results='hide', fig.width=8}
 gp = ggpairs(College, columns= c(1,3:5, 2))
 print(gp, progress=F)
 ```
