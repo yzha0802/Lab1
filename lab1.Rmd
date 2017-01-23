@@ -86,13 +86,21 @@ pairs(College[, 1:5])
 We can also look at this using the `ggpairs` function.
 Install the library `GGally` if it is not available (and any dependent libraries) and load it.
 
-```{r ggpairs, message=FALSE,warning=FALSE, fig.width=8}
+```{r ggpairs, warning=FALSE, message=FALSE, result='hide', fig.width=8}
 library(GGally)
 ggpairs(College, columns= c(1,3:5, 2))
 ```
 
 
+
 _Energetic Students:  how do I suppress the message output so that it does not appear in my document ?  Post on Piazza if you know or make a pull request!_
+
+I found the answer on [this Stackexchange post:](http://stackoverflow.com/questions/41577362/suppress-ggpairs-messages-when-generating-plot) 
+
+```{r ggpairs-good, warning=FALSE, message=FALSE, result='hide', fig.width=8}
+gp = ggpairs(College, columns= c(1,3:5, 2))
+print(gp, progress=F)
+```
 
 The `ggpairs` function realizes that the variable `Private` is categorial and plots side by side histograms.  The density plots are also useful for seeing the skewness in the marginal distributions.
 
@@ -163,6 +171,18 @@ coplot(Outstate ~ Elite | Private, data=College)
 ```
 
 _Energetic Student:  Please improve upone the above plot using ggplot and post to Piazza or issue a pull request_
+
+##  ggplot conditional plot
+
+```{r, fig.width=6, echo=TRUE}
+library(ggplot2)
+ggplot(College, aes(x = Elite, y = Outstate, 
+                    group = Private, 
+                    color = Private)) +
+   geom_point() + facet_grid(.~Private) + ggtitle("Distribution of Out of State Tuition") 
+
+```
+
 
 ## Next Steps
 
