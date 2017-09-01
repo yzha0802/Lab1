@@ -1,6 +1,5 @@
 
-# Demo
-Demo for lab 9/3/2017
+# Sta521 Lab1  9/3/2017
 
 In this lab 
 
@@ -18,4 +17,4 @@ To get started:
   3) Save the [lab1.Rmd](https://raw.githubusercontent.com/STA521-F17/Lab1/master/lab1.Rmd) file to you project directory created above if you did not clone the repository.
   4) On the lower right panel in RStudio, click on the Files tab. You should see a listing of the files in your directory. Click on `lab1.Rmd` to open it in the RStudio editor and then follow instructions there.  
   
-  For more on getting started using RStudio and git see the [StatSci ComputingBootcamp slides](https://github.com/DukeStatSci/ComputingBootcamp2017/blob/master/slides/computing_bootcamp_2017.Rmd) and other materials in  [StatSci ComputingBootcamp](https://github.com/DukeStatSci/ComputingBootcamp2017/)
+  For more on getting started using RStudio and git see the [StatSci ComputingBootcamp slides](https://github.com/DukeStatSci/ComputingBootcamp2017/blob/master/slides/computing_bootcamp_2017.Rmd) and other materials at  [StatSci ComputingBootcamp](https://github.com/DukeStatSci/ComputingBootcamp2017/)
