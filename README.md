@@ -1,5 +1,5 @@
 
-# Sta521 Lab1  9/3/2017
+# Sta521 Lab1  9/4/2017
 
 In this lab 
 
