@@ -1,6 +1,8 @@
 ---
 title: "Demo RStudio and EDA"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
@@ -170,7 +172,6 @@ Let's look at the distribution of Out of state tuition versus Elite status for P
 coplot(Outstate ~ Elite | Private, data=College)
 ```
 
-_Energetic Student:  Please improve upone the above plot using ggplot and post to Piazza or issue a pull request_
 
 ##  ggplot conditional plot
 
@@ -186,4 +187,4 @@ ggplot(College, aes(x = Elite, y = Outstate,
 
 ## Next Steps
 
-Update this document and explore the other variables thinking about the objective of predicting `Apps`.  Provide a brief summary of what you discover thinking about models to predict `Apps`.
+Update this document and explore the other variables thinking about the objective of predicting `Apps`.  Document what you discover thinking about models to predict `Apps`.
