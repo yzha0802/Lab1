@@ -6,7 +6,17 @@ output:
   html_document: default
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+At the very beginning is an (optional) YAML header surrounded by `---`s, the header specifies useful meta data. 
+
+Below the header is the first code chunk, this chunk sets global options that apply to every chunk in your file. This is done by calling `knitr::opts_chunk$set` in this code chunk. Note that these global defaults can be overwritten in individual chunk headers. `include = FALSE` prevents both codes and results from appearing.
+
+To understand `echo = TRUE`, `message = FALSE` and `warning = FALSE`, read [RMarkdown tips and tricks](http://www.science.smith.edu/~amcnamara/sds291/RMarkdownTips.html). _Energetic Students: read the "Shortening knit time" section and try it in this file_
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
