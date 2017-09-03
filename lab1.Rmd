@@ -3,6 +3,7 @@ title: "Demo RStudio and EDA"
 output:
   pdf_document: default
   html_notebook: default
+  html_document: default
 ---
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
@@ -112,6 +113,8 @@ What other features do these plots indicate?  _(Think about assumptions for line
 ### New variables
 
 Let's create a new variable `Elite` by binning the `Top10perc` variable. We are going to divide universities into two groups based on whether or not the proportion of students coming from the top 10% of their high school classes exceeds 50 %.  We will use the library `dplyr` to illustrate some of the possible transformations and the idea of pipes, which are quite powerful once you get the hang of them!
+
+For students who are unfamiliar with `dplyr`, read this [intro](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) first.
 
 ```{r}
 library(dplyr)
