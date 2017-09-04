@@ -206,6 +206,6 @@ Update this document and explore the other variables thinking about the objectiv
 
 ## Updating your work on GitHub
 
-In the upper right you should see a tab labeled `Git`.  Click on that so see a list of files that have changed.
+In the upper right you should see a tab labeled `Git`.  Click on that to see a list of files that have been added/changed.
 
 To save changes to github, check the box of any file to add/update.  Then click on the `Commit` link (just above path).  In the pop-up window add a Commit message (something meaningful that identifies the changes made).  When done, click on Commit to save the changes.  Click on the Green Up arrow to `push` your changes to Github.
