@@ -26,7 +26,7 @@ When you save the notebook, an HTML file containing the code and output will be 
 
 ##  Exercise 8 from ISLR Chapter 2
 
-The following illustrate commands for exploring this exercise using R and various packages for the `Collage` data.
+The following illustrate commands for exploring this exercise using R and various packages for the `College` data.
 
 ### Libraries
 
@@ -51,6 +51,10 @@ data(College)
 ```
 
 This loads the dataframe `College`.  Note you can always see the content of any `R` object by simply typing its name.
+```{r}
+College
+```
+
 
 For information about the variables, read the text or enter
 ```{r}
@@ -85,7 +89,7 @@ d = dim(College)
 ```
 
 Suppose we want to refer to those numbers in the text.  We can extract them using n = `r d[1]` and d = `r d[2]`.
-Look at the code to see how we extracted them
+Look at the code to see how we extracted them.   
 
 ### Scatter plot matrices
 
@@ -104,11 +108,9 @@ library(GGally)
 ggpairs(College, columns= c(1,3:5, 2))
 ```
 
+The last variable `2` is our response.
 
-
-_Energetic Students:  how do I suppress the message output so that it does not appear in my document ?  Post on Piazza if you know or make a pull request!_
-
-I found the answer on [this Stackexchange post:](http://stackoverflow.com/questions/41577362/suppress-ggpairs-messages-when-generating-plot) 
+Note `ggpairs` will show its progress in your output and using warning=FALSE or message=FALSE does not suppress it. This answer on [this Stackexchange post:](http://stackoverflow.com/questions/41577362/suppress-ggpairs-messages-when-generating-plot) provided the trick or `progress=F` to suppress the progress bar.
 
 ```{r ggpairs-good, warning=FALSE, message=FALSE, results='hide', fig.width=8}
 gp = ggpairs(College, columns= c(1,3:5, 2))
