@@ -1,9 +1,9 @@
 ---
 title: "Demo RStudio and EDA"
 output:
-  pdf_document: default
-  html_notebook: default
   html_document: default
+  html_notebook: default
+  pdf_document: default
 ---
 
 ```{r setup, include = FALSE}
@@ -52,7 +52,7 @@ data(College)
 
 This loads the dataframe `College`.  Note you can always see the content of any `R` object by simply typing its name.
 ```{r}
-College
+College[1:5,]
 ```
 
 
